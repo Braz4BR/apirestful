@@ -1,11 +1,25 @@
 package com.dio.apirestful.domain.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name = "tb_notificacao")
 public class Notificacao {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String tipo;
+
     private String mensagem;
-    private Date data;
+
+    private LocalDate data;
+    
     public String getTipo() {
         return tipo;
     }
@@ -18,13 +32,17 @@ public class Notificacao {
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
-    public Date getData() {
+    public LocalDate getdata() {
         return data;
     }
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
-
-    
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    } 
     
 }
