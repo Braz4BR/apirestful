@@ -21,8 +21,8 @@ public class Usuario {
     @Column(length = 100)
     private String nome;
 
-    @Column(length = 200, unique = true)
-    private String email;
+    @Column(name = "userEmail",length = 200, unique = true)
+    private String userEmail;
 
     // Assinatura como um relacionamento OneToOne
     @OneToOne(cascade = CascadeType.ALL)
@@ -54,11 +54,11 @@ public class Usuario {
     }
 
     public String getEmail() {
-        return email;
+        return userEmail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.userEmail = email;
     }
 
     // Getter e Setter para tipoAssinatura

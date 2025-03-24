@@ -8,5 +8,5 @@ import com.dio.apirestful.domain.model.Usuario;
 @Repository
 public interface UserRepository extends JpaRepository<Usuario,Long>{
     
-    
+    boolean existsByUserEmail(String email);
 }
